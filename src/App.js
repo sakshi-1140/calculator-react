@@ -82,7 +82,7 @@ function App() {
       <ButtonContainer
       handleOperation={handleOperation} />
       {/* {output==="error"?<ErrorComponent error={error}/>:<OutputContainer output={output} />} */}
-     {/* <Result result={result} error={error}/> */}
+     <Result result={result} error={error}/>
     </div>
   );
 }

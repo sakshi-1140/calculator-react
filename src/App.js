@@ -2,14 +2,14 @@ import "./App.css";
 import InputContainer from "./components/InputContainer";
 import ButtonContainer from "./components/ButtonContainer";
 import React, { useState } from 'react';
-import ErrorComponent from "./components/ErrorComponent";//old
-import OutputContainer from "./components/OutputContainer";//old
-import Result from "./components/Result.jsx"
-// delete lines with comments = old
+import ErrorComponent from "./components/ErrorComponent";
+import OutputContainer from "./components/OutputContainer";
+import Result from "./components/Result.jsx" // not needed
+
 function App() {
   const [number1, setNumber1] = useState("");
   const [number2, setNumber2] = useState("");
-  ///const [output, setOutput] = useState(null);//old
+  
 
   const [result,setResult]=useState(null);
   const [error, setError]=useState("") ;
@@ -28,14 +28,14 @@ function App() {
     if(number1===""||number2==="")
     {
       setError('Both fields are required.');
-      //setOutput("error");//old
+     
       setNumber1("");
       setNumber2("");
       return false;
     }
       if(isNaN(number1)||isNaN(number2)){
       setError('Inputs must be valid numbers.');
-      //setOutput("error");//old
+     
       setNumber1("");
       setNumber2("");
       return false;
@@ -63,7 +63,6 @@ function App() {
       }
       setResult(res);
       setError("");
-      //setOutput(res);//old 
       setNumber1("");
       setNumber2("");
     }
@@ -81,8 +80,10 @@ function App() {
       />
       <ButtonContainer
       handleOperation={handleOperation} />
-      {/* {output==="error"?<ErrorComponent error={error}/>:<OutputContainer output={output} />} */}
-     <Result result={result} error={error}/>
+   
+     {/* <Result result={result} error={error}/> */}
+     {error && <ErrorComponent error={error}/>}
+     {!error && result!=null && <OutputContainer output={result} />}
     </div>
   );
 }

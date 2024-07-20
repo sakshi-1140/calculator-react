@@ -5,14 +5,14 @@ import React, { useState } from 'react';
 import ErrorComponent from "./components/ErrorComponent";//old
 import OutputContainer from "./components/OutputContainer";//old
 import Result from "./components/Result.jsx"
-// delete comments with old
+// delete lines with comments = old
 function App() {
   const [number1, setNumber1] = useState("");
   const [number2, setNumber2] = useState("");
   ///const [output, setOutput] = useState(null);//old
 
-  const [result,setResult]=useState(null);//new 
-  const [error, setError]=useState("") ;//extra
+  const [result,setResult]=useState(null);
+  const [error, setError]=useState("") ;
 
   const handleNumber1Change = (e) => {
     console.log(e.target.value)
@@ -27,14 +27,14 @@ function App() {
   const validateInputs=()=>{
     if(number1===""||number2==="")
     {
-      setError('Both fields are required.');//extra
+      setError('Both fields are required.');
       //setOutput("error");//old
       setNumber1("");
       setNumber2("");
       return false;
     }
       if(isNaN(number1)||isNaN(number2)){
-      setError('Inputs must be valid numbers.');//extra
+      setError('Inputs must be valid numbers.');
       //setOutput("error");//old
       setNumber1("");
       setNumber2("");
@@ -56,14 +56,14 @@ function App() {
         res = num1 * num2;
       } else if (operation === '/') {
         if (num2 === 0) {
-          setError('Cannot divide by zero.');//extra
+          setError('Cannot divide by zero.');
           return;
         }
         res = num1 / num2;
       }
-      setResult(res);//new addition
-      setError("");//extra
-      //setOutput(res);//old add
+      setResult(res);
+      setError("");
+      //setOutput(res);//old 
       setNumber1("");
       setNumber2("");
     }

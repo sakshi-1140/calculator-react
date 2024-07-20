@@ -1,38 +1,60 @@
-.App {
+.mainContainer{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  
+  width: 30vw;
+  height: 80vh;
+  border-radius: 1.5rem;
+  box-shadow:
+    0 -10px 20px -10px rgba(0, 0, 255, 0.5),  
+    10px 0 20px -10px rgba(0, 0, 255, 0.5),   
+    -10px 0 20px -10px rgba(0, 0, 255, 0.5),  
+    0 10px 20px -10px rgba(255, 0, 0, 0.5); 
+}
+h1{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inputContainer{
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.inputContainer input{
+  margin: 10px;
+  height: 1.5rem;
+  font-weight: 900;
+}
+
+.buttonContainer{
+  margin: 5px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.buttonContainer button{
+  margin: 10px;
+  width: 2rem;
+  height: 2rem;
+  font-size: 25px;
+  font-weight: 900;
+  background-color: black;
   color: white;
 }
+.errorComponent{
+  text-align: center;
+}
+.errorComponent h3{
+  color: red;
 
-.App-link {
-  color: #61dafb;
+}
+.outputContainer{
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+#sc{
+  color: green;
 }
